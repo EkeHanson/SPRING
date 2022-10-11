@@ -1,7 +1,6 @@
 package com.spring.comferencedemo.Models;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import jakarta.persistence.*;
-import org.hibernate.annotations.Type;
-import java.awt.*;
 import java.util.List;
 
 @Entity(name="speakers")
@@ -15,7 +14,7 @@ public class Speaker {
     private String title;
     private String company;
 //    @Lob
-//    //@Type(type="org.hibernate.type.BinaryType")
+//    @JsonSubTypes.Type(value=Speaker.class  ,name="org.hibernate.type.BinaryType")
 //    private  byte[]  speaker_photo;
 
     Speaker(){}
@@ -23,7 +22,7 @@ public class Speaker {
 //    public byte[] getSpeaker_photo() {
 //        return speaker_photo;
 //    }
-
+//
 //    public void setSpeaker_photo(byte[] speaker_photo) {
 //        this.speaker_photo = speaker_photo;
 //    }
@@ -33,7 +32,7 @@ public class Speaker {
 
 
 
-@ManyToMany(mappedBy = "speakers")
+    @ManyToMany(mappedBy = "speakers")
     public List<Session> getSessions() {
         return sessions;
     }

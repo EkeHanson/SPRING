@@ -17,19 +17,10 @@ public class MyFrame extends JFrame {
 
     MyFrame(){
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("My Clock program");
+        this.setTitle("My Clock Program");
         this.setLayout(new FlowLayout());
-        this.setSize(400,200);
-        this.setResizable(false);
-
-        dayFormat = new SimpleDateFormat("EEEE");
-        dayLabel = new JLabel();
-        dayLabel.setBounds(20,20,400,25);
-        dayLabel.setFont(new Font("Ink Free", Font.PLAIN,35));
-
-        dateFormat = new SimpleDateFormat("MMMMM dd, yyyy");
-        dateLabel = new JLabel();
-        dateLabel.setFont(new Font("Ink Free", Font.PLAIN,25));
+        this.setSize(350,200);
+        this.setResizable(true);
 
         timeFormat = new SimpleDateFormat("hh:mm:ss a");
         timeLabel = new JLabel();
@@ -37,6 +28,17 @@ public class MyFrame extends JFrame {
         timeLabel.setForeground(new Color(0x00FF00));
         timeLabel.setBackground(Color.black);
         timeLabel.setOpaque(true);
+
+        dayFormat = new SimpleDateFormat("EEEE");
+        dayLabel = new JLabel();
+        dayLabel.setBounds(20,20,400,25);
+        dayLabel.setFont(new Font("Ink Free", Font.PLAIN,35));
+
+        dateFormat = new SimpleDateFormat("MMMM dd, yyyy");
+        dateLabel = new JLabel();
+        dateLabel.setFont(new Font("Ink Free", Font.PLAIN,25));
+        dateLabel.setBounds(20,200,400,25);
+
 
         this.add(timeLabel);
         this.add(dayLabel);

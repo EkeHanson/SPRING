@@ -24,7 +24,6 @@ public class StudentController {
         model.addAttribute("students",studentService.getAllStudents());
         return "students.html";
     }
-
     @GetMapping("students/new")
     public  String createStudentForm(Model model){
         //Create student object to hold student form data

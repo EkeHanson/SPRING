@@ -1,7 +1,4 @@
-# syntax=docker/dockerfile:1
-
-FROM openjdk:17
-EXPOSE 8085
-ADD target/student-management-system.jar .
-ENTRYPOINT ["java","-jar","/student-management-system.jar"]
-
+#FROM openjdk:17
+#ADD target/student-management-system.jar student-management-system.jar
+#EXPOSE 8080
+#ENTRYPOINT ["java","-jar","student-management-system.jar"]
